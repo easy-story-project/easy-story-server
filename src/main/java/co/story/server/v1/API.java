@@ -1,0 +1,14 @@
+package co.story.server.v1;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class API {
+
+    @RequestMapping(value = "/actor", method = RequestMethod.POST)
+    public String createActor(String firstName) {
+        return "";
+    }
+}
