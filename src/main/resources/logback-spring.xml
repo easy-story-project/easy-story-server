@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+    <!--<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">-->
+    <!--<encoder>-->
+    <!--<pattern>-->
+    <!--[%d{yyyy-MM-dd HH:mm:ss.SSS} %green(%logger{0})]%highlight(%level): %msg%n-->
+    <!--</pattern>-->
+    <!--</encoder>-->
+    <!--</appender>-->
+
+    <!--[%d{yyyy-MM-dd HH:mm:ss.SSS} %green(%logger{0})]%highlight(%level): %msg%n-->
+    <!--<file>${LOG_PATH}/drift.log</file>-->
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>
+                %msg%n
+            </Pattern>
+        </encoder>
+    </appender>
+
+    <!--{yyyy-MM-dd HH:mm:ss.SSS} %magenta(%-5thread)-->
+    <!--<logger name="org.springframework.boot" level="info">-->
+    <!--<appender-ref ref="STDOUT"/>-->
+    <!--</logger>-->
+
+    <logger name="co.story.server.crawlers" level="WARN">
+        <appender-ref ref="FILE"/>
+    </logger>
+</configuration>
